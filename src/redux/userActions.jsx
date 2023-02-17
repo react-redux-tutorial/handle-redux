@@ -1,4 +1,5 @@
-import { LOGIN, LOGOUT } from "./type";
+export const LOGIN  = "LOGIN";
+export const LOGOUT = "LOGOUT";
 
 // 로그인 액션 생성 함수
 export function loginAction(userData) {
