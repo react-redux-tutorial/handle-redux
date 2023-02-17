@@ -21,7 +21,7 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  // 로그인 버튼을 눌렀을 시 해당 user의 정보를 받아오는 함수
+  // 로그인 버튼을 눌렀을 시 해당 사용자의 정보를 받아오는 함수
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -34,12 +34,14 @@ function Login() {
       });
       // 정상적으로 로그인이 된다면 로컬스토리지에 사용자의 인증토큰 값을 저장
       localStorage.setItem("testToken", res.data.token);
-      // user의 정보를 store에 저장하기위해 로그인관련 액션생성함수를 reducer에 dispatch
+      // Store의 상태를 업데이트하기 위해 로그인 액션생성함수를 reducer에 dispatch
       dispatch(loginAction(res.data));
       navigate("/");
     } catch (error) {
       console.error(error);
     }
+    setUserId("");
+    setPassword("");
   };
 
   return (

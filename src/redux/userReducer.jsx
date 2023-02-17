@@ -12,7 +12,7 @@ const initialState = {
   token: null,
 };
 
-// dispatch의 인자에 맞게 실행하는 reducer 함수
+// dispatch로 전달받은 action의 type에 따라 실행하는 reducer 함수
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN:
