@@ -32,8 +32,6 @@ function Login() {
         username: userId,
         password: password,
       });
-      // 정상적으로 로그인이 된다면 로컬스토리지에 사용자의 인증토큰 값을 저장
-      localStorage.setItem("testToken", res.data.token);
       // Store의 상태를 업데이트하기 위해 로그인 액션생성함수를 reducer에 dispatch
       dispatch(loginAction(res.data));
       navigate("/");
